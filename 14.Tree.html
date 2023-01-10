@@ -29,9 +29,13 @@
 
     <script src="./js/jquery-3.6.3.js"></script>
     <script>
-        // $('.item-002').find('.item-01').css('border','3px solid red')
-        $('.item-001').parents('.item-02').next().css('border','3px solid red')
-        
+        // $('.level-1').find('.item-02').css('border', '1px solid red')
+
+        // $('.item-002').closest('.item-02').prev().css('border', '1px solid red')
+        // $('.item-002').closest('.level-1').find('.item-03').css('border', '1px solid red')
+
+        // $('.item-001').nextAll().css('border', '1px solid red')
+        $('.item-001').nextUntil('.item-003').css('border', '1px solid red')
     </script>
 </body>
 
