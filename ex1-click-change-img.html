@@ -18,19 +18,32 @@
     // JS 的做法：
 
     const imgs = document.querySelector('img-wrap img')
+    const bigImg =document.querySelector('.img-demo img')
+    // console.log('imgs',imgs)
 
-    imgs.addEventListener('click',function(){
-        
+    imgs.forEach(function(img,index){
+        // console.log('item',img);
+        // console.log('index',index);
+
+        img.addEventListener('click',() => {
+            //console.log('img', img.getAttribute('src'))
+            bigImg.setAttribute('src',img.getAttribute('src'))
+        })
     })
-    console.log()
+    
 
     //1.WHEN? [時間點] 使用者點選小圖 （click) 之後
 
+    $('.img-wrap img').click(function(event){
+        // console.log('img',$(event.target).attr('src'));
+       $('img-demo img').attr('src',$(event.target).attr('src'))
+    })
+
+    //2.拿使用者點選的那張小圖，換大圖的 src
+    console.log('img src:',$('img').attr('src'));
+    
 
 </script>
 
-    
-
-    
 </body>
 </html>
