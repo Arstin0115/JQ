@@ -21,7 +21,7 @@
         }
 
         .progressBar {
-            background-color: pink;
+            background-color: red;
             height: 50px;
             width: 100%;
         }
@@ -38,14 +38,26 @@
     <script>
 
         $(window).scroll(function () {
-            const scrollTop = $(window).scrollTop();
-            const bodyHeight = $('body').height();
+            console.log('scrollTop:',$(window).scrollTop()) ;
 
-            const percentage = scrollTop / bodyHeight * 100;
 
-            console.log('percentage', percentage);
+            if ($(window).scrollTop() >= 600) {
+                $('.product .col').css('opacity' , 1).css('transform','translateY(0)')
 
-            $('.progressBar').css('width', `${percentage}%`)
+                $('.product h2').css('transform','translateX(0)')
+            }
+            else{
+                $('.product .col').css('opacity' , 0).css('transform','translateY(100px)')
+
+                $('.product h2').css('transform','translateX(-300px)')
+            }
+            // const bodyHeight = $('body').height();
+
+            // const percentage = scrollTop / bodyHeight * 100;
+
+            // console.log('percentage', percentage);
+
+            // $('.progressBar').css('width', `${percentage}%`)
         })
     </script>
 </body>
