@@ -40,7 +40,6 @@
         $(window).scroll(function () {
             console.log('scrollTop:',$(window).scrollTop()) ;
 
-
             if ($(window).scrollTop() >= 600) {
                 $('.product .col').css('opacity' , 1).css('transform','translateY(0)')
 
@@ -51,13 +50,13 @@
 
                 $('.product h2').css('transform','translateX(-300px)')
             }
-            // const bodyHeight = $('body').height();
+            const bodyHeight = $('body').height();
 
-            // const percentage = scrollTop / bodyHeight * 100;
+            const percentage = scrollTop / bodyHeight * 100;
 
-            // console.log('percentage', percentage);
+            console.log('percentage', percentage);
 
-            // $('.progressBar').css('width', `${percentage}%`)
+            $('.progressBar').css('width', `${percentage}%`)
         })
     </script>
 </body>
